@@ -14,7 +14,7 @@ ACCOUNTS_LIST = [
     },
     {
         # gmailの場合、imapの有効化（24年6月からデフォルトでオンになるらしい）と、
-        # アプリパスワードにの設定が必要
+        # アプリパスワードの設定が必要
         "server": "imap.gmail.com",
         "user": "********@gmail.com",
         "password": "********",
