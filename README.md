@@ -11,3 +11,7 @@ DiscordにPythonで投稿する方法(bot/Webhook)<br>
 https://zenn.dev/karaage0703/articles/926f18ba04e093<br>
 Python の標準ライブラリでメールをデコードする<br>
 https://qiita.com/jsaito/items/a058611cf9386addbc12<br>
+
+p.s.
+スマホのgmailに通知が来たり来なかったりして困ってます。
+何か解決法知りませんか？
