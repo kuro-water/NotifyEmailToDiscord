@@ -9,9 +9,6 @@ class Discord:
     def __init__(self, webhook_url: str):
         self.webhook_url = webhook_url
 
-    def _on_error(self, e: Exception):
-        raise e
-
     def _post(
         self, message: str, webhook_url: str = "default"
     ):  # webhookを用いてdiscordに投稿
@@ -36,13 +33,10 @@ class Discord:
     def post(self, message: str, webhook_url: str = "default"):
         # メッセージがDISCORD_POST_LIMITを超える場合は分割して投稿
         # webhookにおいては、2000字を超過するとエラーとなる
-        try:
-            while message:
-                if WEBHOOK_POST_LIMIT < len(message):
-                    self._post(message[:WEBHOOK_POST_LIMIT], webhook_url)
-                    message = message[WEBHOOK_POST_LIMIT:]
-                else:
-                    self._post(message, webhook_url)
-                    message = ""
-        except Exception as e:
-            self._on_error(e)
+        while message:
+            if WEBHOOK_POST_LIMIT < len(message):
+                self._post(message[:WEBHOOK_POST_LIMIT], webhook_url)
+                message = message[WEBHOOK_POST_LIMIT:]
+            else:
+                self._post(message, webhook_url)
+                message = ""
